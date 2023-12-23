@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../public/img/css/js/homepage.css" />
+    <title>Update</title>
+  </head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+    input,
+    label {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <%= JSON.stringify(userEdit) %>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/create">Create</a></li>
+      <li style="float: right"><a class="active" href="#about">About</a></li>
+    </ul>
+
+    <div style="margin: 0 auto; width: 500px; margin-top: 100px">
+      <form action="/update_user" method="post">
+        <div style="display: none">
+          <label for="fname">id:</label><br />
+          <input
+            type="text"
+            id="fname"
+            name="id"
+            value="<%= userEdit.id %>"
+          /><br />
+        </div>
+        <label for="fname">First name:</label><br />
+        <input
+          type="text"
+          id="fname"
+          name="name"
+          value="<%= userEdit.name %>"
+        /><br />
+        <label for="fname">Email:</label><br />
+
+        <input
+          type="text"
+          id="fname"
+          name="email"
+          value="<%= userEdit.email %>"
+        /><br />
+        <label for="lname">City:</label><br />
+
+        <input
+          type="text"
+          id="lname"
+          name="city"
+          value="<%= userEdit.city %>"
+        /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

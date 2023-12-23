@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../public/img/css/js/homepage.css" />
+    <title>Update</title>
+  </head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+    input,
+    label {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <%= JSON.stringify(Userdelte) %>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/create">Create</a></li>
+      <li style="float: right"><a class="active" href="#about">About</a></li>
+    </ul>
+
+    <div style="margin: 0 auto; width: 500px; margin-top: 100px">
+      <form action="/comfirm_delete" method="post">
+        <div style="display: none">
+          <label for="fname">id:</label><br />
+          <input
+            type="text"
+            id="fname"
+            name="id"
+            value="<%=Userdelte.id %>"
+          /><br />
+        </div>
+        <h4>Bạn có chắc xóa Gmail này Không : <%=Userdelte.email %></h4>
+        <input type="submit" value="Xóa" />
+      </form>
+    </div>
+  </body>
+</html>
